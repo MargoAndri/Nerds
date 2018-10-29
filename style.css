@@ -1,11 +1,16 @@
+html,
+body {
+    min-width: 1200px;
+    min-height: 2400px;
+}
+
 body {
     margin: 0;
     padding: 0;
-
     font-family: "Roboto", Arial, sans-serif;
     font-size: 16px;
-    font-weight: 400;
     line-height: 24px;
+    font-weight: 400;
     color: #283136;
 
 }
@@ -14,19 +19,36 @@ a {
     text-decoration: none;
 }
 
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+
+    white-space: nowrap;
+    clip-path: inset(100%);
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+}
+
 .button {
-    font: inherit;
+    display: inline-block;
+    padding: 15px 40px;
+
+    font-size: 16px;
+    line-height: 18px;
     font-weight: 500;
     text-align: center;
     vertical-align: middle;
     text-transform: uppercase;
-    line-height: 18px;
     color: #ffffff;
 
     background-color: #fb565a;
+    border-radius: 3px;
     border: none;
     cursor: pointer;
-
 }
 
 .button:hover,
@@ -38,22 +60,17 @@ a {
 .button:active {
     color: rgba(255, 255, 255, 0.3);
     background-color: #d7373b;
+    box-shadow: 0 3px rgba(193, 49, 53, 0.3) inset;
 }
 
-.visually-hidden {
-    position: absolute;
-    clip: rect(0 0 0 0);
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-}
-
-.main-navigation {
-    font-weight: 500;
-    line-height: 30px;
-    color: #000000;
-    text-transform: uppercase;
+.main-header {
     background-color: #eeeeee;
+
+}
+
+.main-header-logo {
+    width: 160px;
+    height: 70px;
 }
 
 .main-header-logo:hover {
@@ -64,6 +81,56 @@ a {
     opacity: 0.3;
 }
 
+.main-navigation {
+    display: flex;
+    width: 1200px;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    margin: 0 auto;
+    padding-top: 40px;
+
+    font-weight: 500;
+    line-height: 30px;
+    color: #000000;
+    text-transform: uppercase;
+}
+
+.site-navigation {
+    display: flex;
+    flex-wrap: wrap;
+
+    width: 440px;
+    flex-direction: row;
+    margin-left: 180px;
+    margin-right: 180px;
+    justify-content: space-around;
+}
+
+.user-navigation {
+    max-width: 160px;
+    display: flex;
+    margin-left: auto;
+}
+
+.user-navigation .shopping-basket-link {
+    position: relative;
+    padding-left: 50px;
+}
+
+.shopping-basket-link::before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 25px;
+    width: 15px;
+    height: 15px;
+
+    background-image: url("img/cart-icon.png");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+}
 
 .site-navigation,
 .user-navigation {
@@ -91,42 +158,134 @@ a {
     border-bottom: 2px solid #fb565a;
 }
 
-.features {
+.slider-container {
+    width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.slider {
+    position: relative;
     background-color: #eeeeee;
-    padding: 1em;
 }
 
+.slider-controls {
+    position: absolute;
+    left: 50%;
+    bottom: 104px;
+    z-index: 100;
 
-.features-list {
+    width: 160px;
+    height: 18px;
+
+    text-align: center;
+    font-size: 0;        /* зачем здесь нулевой фонт? */
+    transform: translateX(-50%);
+}
+
+.slider-controls label {
+    display: inline-block;
+
+    position: relative;
+    width: 18px;
+    height: 18px;
+    padding: 8px;
+
+
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.slider-controls label::after {
+    content: "";
+
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    z-index: 1;
+
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: #ffffff;
+}
+
+.slider-list {
     list-style: none;
-    padding: 1em;
+    margin: 0;
+    padding: 0;
 }
 
-.features-item h3,
-.page-title {
+.slider-item {
+    display: none;
+    padding: 78px 0 80px 0;
+}
+
+.slider-item:nth-child(1) {
+    background-image: url("img/slide1.png");
+    background-repeat: no-repeat;
+    background-position: 93% 18px;
+}
+
+.slider-item:nth-child(2) {
+    background-image: url("img/slide2.png");
+    background-repeat: no-repeat;
+    background-position: 100% 0;
+}
+
+.slider-item:nth-child(3) {
+    background-image: url("img/slide3.png");
+    background-repeat: no-repeat;
+    background-position: 100% 0;
+}
+
+#btn-1:checked ~ .slider-list .slider-item:nth-child(1) {
+    display: block;
+}
+
+#btn-2:checked ~ .slider-list .slider-item:nth-child(2) {
+    display: block;
+}
+
+#btn-3:checked ~ .slider-list .slider-item:nth-child(3) {
+    display: block;
+}
+
+#btn-1:checked ~ .slider-controls .slider-controls-item1::before,
+#btn-2:checked ~ .slider-controls .slider-controls-item2::before,
+#btn-3:checked ~ .slider-controls .slider-controls-item3::before {
+    content: "";
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 2;
+    width: 4px;
+    height: 4px;
+    margin: -4px;
+    background-color: inherit;
+    border: 2px solid #c1c1c1;
+    border-radius: 50%;
+}
+
+
+.slider-item h3 {
+    max-width: 600px;
+    margin: 0;
+    margin-bottom: 27px;
+
     font-size: 55px;
-    font-weight: 500;
     line-height: 55px;
+    font-weight: 500;
     color: #000000;
 }
 
-.features-item:first-child {
-    background-image: url("img/slide1.png");
-    background-repeat: no-repeat;
-    background-position: right;
+.slider-item p {
+    max-width: 400px;
+    margin: 0;
+    margin-bottom: 38px;
 }
 
-.features-item:nth-child(2) {
-    background-image: url("img/slide2.png");
-    background-repeat: no-repeat;
-    background-position: right;
-}
-
-.features-item:last-child {
-    background-image: url("img/slide3.png");
-    background-repeat: no-repeat;
-    background-position: right;
-}
 
 .service-list {
     list-style: none;
@@ -322,7 +481,6 @@ fieldset {
 
     background-color: #eeeeee;
 
-
 }
 
 .pagination-item a:hover,
@@ -340,46 +498,22 @@ fieldset {
     border: 1px solid #dbdbdb;
 }
 
+.page-title {
+    margin: 0;
+    font-size: 55px;
+    font-weight: 500;
+    line-height: 55px;
+    color: #000000;
+}
+
 /*  ---- Сеточный стили ----- */
 
-html,
-body {
-    min-width: 1440px;
-    min-height: 2400px;
-}
 
 
-.main-navigation {
-    display: flex;
-    width: 1160px;
-    flex-direction: row;
-    justify-content: space-around;
-
-    padding-right: 140px;
-    padding-left: 140px;
-    padding-top: 40px;
 
 
-}
 
-.main-header-logo {
-    width: 160px;
-    height: 65px;
 
-}
-
-.site-navigation {
-    display: flex;
-    width: 440px;
-    flex-direction: row;
-    margin-left: 200px;
-    margin-right: 200px;
-    justify-content: space-between;
-}
-
-.user-navigation {
-    margin-left: auto;
-}
 
 .features {
     min-height: 420px;

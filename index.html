@@ -18,31 +18,41 @@
                 <li><a href="#">Контакты</a></li>
             </ul>
             <ul class="user-navigation">
-                <li class="shopping-basket-link"><a href="#">Корзина</a></li>
+                <li><a class="shopping-basket-link" href="#">Корзина</a></li>
             </ul>
         </nav>
     </header>
     <main class="container">
         <h1 class="visually-hidden">Дизайн-студия Нердс</h1>
-        <section class="features">
+        <section class="slider">
+            <div class="slider-container">
             <h2 class="visually-hidden">Особенности</h2>
-            <ul class="features-list">
-                <li class="features-item">
-                    <h3>Долго, дорого, скрупулезно.</h3>
-                    <p>Математически выверенный дизайн для вашего сайта или мобильного приложения.</p>
-                    <a class="button">Узнать больше</a>
+                    <input class="visually-hidden" type="radio" id="btn-1" name="toggle" checked>
+                    <input class="visually-hidden" type="radio" id="btn-2" name="toggle">
+                    <input class="visually-hidden" type="radio" id="btn-3" name="toggle">
+                <div class="slider-controls">
+                    <label class="slider-controls-item slider-controls-item1" for="btn-1"></label>
+                    <label class="slider-controls-item slider-controls-item2" for="btn-2"></label>
+                    <label class="slider-controls-item slider-controls-item3" for="btn-3"></label>
+                </div>
+            <ul class="slider-list">
+                <li class="slider-item">
+                    <h3>Долго, дорого,<br> скрупулезно.</h3>
+                    <p>Математически выверенный дизайн<br> для вашего сайта или мобильного приложения.</p>
+                    <a class="button" href="#">Узнать больше</a>
                 </li>
-                <!-- <li class="features-item">
+                <li class="slider-item">
                     <h3>Любим математику как никто другой.</h3>
                     <p>Никакого креатива, только математические формулы для расчета идеальных пропорций.</p>
-                    <a class="button">Узнать больше</a>
+                    <a class="button" href="#">Узнать больше</a>
                 </li>
-                <li class="features-item">
+                <li class="slider-item">
                     <h3>Только ночь, только хардкор.</h3>
                     <p>Работать днем, как все? Мы против этого. Ближе к полуночи работа только начинается.</p>
-                    <a class="button">Узнать больше</a>
-                </li> -->
+                    <a class="button" href="#">Узнать больше</a>
+                </li>
             </ul>
+            </div>
         </section>
         <section class="service">
             <h2 class="visually-hidden">Услуги, предоставляемые студией</h2>
