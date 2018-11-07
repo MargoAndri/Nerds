@@ -12,7 +12,6 @@ body {
     line-height: 24px;
     font-weight: 400;
     color: #283136;
-
 }
 
 a {
@@ -65,7 +64,6 @@ a {
 
 .main-header {
     background-color: #eeeeee;
-
 }
 
 .main-header-logo {
@@ -358,10 +356,12 @@ a {
 
 .index-columns {
     display: flex;
-    flex-direction: row;
     width: 1200px;
     margin: 0 auto;
-    box-sizing: border-box;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 70px;
+    border-bottom: 2px solid #eeeeee;
 }
 
 .description h2 {
@@ -381,23 +381,66 @@ a {
     margin-bottom: 48px;
 }
 
-.description h3,
+.description h3 {
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #000000;
+}
+
+.description ul {
+    list-style: none;
+}
+.description li {
+    position: relative;
+    padding-bottom: 30px;
+}
+
+.description li::before {
+    content: "";
+    position: absolute;
+    left: -35px;
+    top: 10px;
+    width: 25px;
+    height: 2px;
+    background-color: #fb565a;
+}
+
+.figures {
+    margin-left: auto;
+}
+
 .figures h3 {
     font-weight: 700;
     text-transform: uppercase;
     color: #000000;
 }
 
+.figures-table {
+    padding-left: 25px;
+}
+
+.figures-table td {
+    text-align: left;
+}
+
+.figures-item  {
+    font-size: 45px;
+    font-weight: 700;
+    height: 62px;
+    text-align: left;
+}
+
 .clients-list {
     list-style: none;
-
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     width: 1160px;
-    margin-right: 120px;
-    margin-left: 120px;
+    min-height: 180px;
+    align-items: center;
+    margin: 0 auto;
     margin-bottom: 80px;
+    border-bottom: 2px solid #eeeeee;
 }
 
 .clients-item {
@@ -411,6 +454,33 @@ a {
 
 .clients-item:active {
     opacity: 0.1;
+}
+
+.contacts {
+    position: relative;
+}
+
+.contacts-details {
+    position: absolute;
+    left: 110px;
+    top: 54px;
+    background-color: #ffffff;
+    margin: 0 auto;
+    padding: 50px;
+    padding-top: 63px;
+}
+.contacts-details h3 {
+    text-transform: uppercase;
+}
+
+.contacts-details p {
+    color: #666666;
+}
+
+.pin {
+    position: absolute;
+    top: 85px;
+    right: 370px;
 }
 
 .write-us-item label {
@@ -444,33 +514,118 @@ a {
     margin: 0;
 }
 
+.main-footer {
+    display: flex;
+    width: 1200px;
+    margin: 0 auto;
+    margin-top: 70px;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
 .footer-social ul {
     list-style: none;
+    width: 360px;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-right: 90px;
+}
+
+.social-button {
+    display: inline-block;
+    background-color: #e1e1e1;
+    border-radius: 50%;
+    margin-right: 6px;
+    background-repeat: no-repeat;
+}
+.social-button:hover,
+.social-button:focus {
+    background-color: #e74246;
+}
+
+.social-button:active {
+    background-color: #d7373b;
+}
+
+.social-vk {
+    display: block;
+    width: 80px;
+    height: 80px;
+    background-image: url("img/vk-icon.png");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+
+.social-fb {
+    display: block;
+    width: 80px;
+    height: 80px;
+    background-image: url("img/fb-icon.png");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+
+.social-inst {
+    display: block;
+    width: 80px;
+    height: 80px;
+    background-image: url("img/insta-icon.png");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+
+.social-vk:active,
+.social-fb:active,
+.social-inst:active {
+    opacity: 0.3;
 }
 
 .footer-text b {
+    display: block;
+    margin-top: 20px;
     font-size: 36px;
     line-height: 36px;
     color: #000000;
 }
 
 .footer-text p {
+    font-size: 16px;
     line-height: 22px;
     color: #444444;
+    max-width: 460px;
 }
 
+/* Страница каталога */
 
-.page-title {
+
+.catalog-title {
+    min-height: 200px;
+    margin: 0;
+    margin-bottom: 110px;
+    padding: 0;
+    padding-top: 80px;
+    font-size: 55px;
+    font-weight: 500;
+    line-height: 55px;
     text-align: center;
+    color: #000000;
     background-color: #eeeeee;
-    margin-top: 0;
 }
 
 fieldset {
     border: none;
 }
 
-.filters legend {
+
+.filter {
+    width: 260px;
+    margin-right: 140px;
+}
+
+.filter legend {
     font-size: 18px;
     font-weight: 700;
     line-height: 30px;
@@ -478,7 +633,7 @@ fieldset {
     color: #000000;
 }
 
-.filter ul {
+.filter-form ul {
     list-style: none;
     line-height: 20px;
 }
@@ -539,9 +694,7 @@ fieldset {
     line-height: 18px;
     font-weight: 500;
     color: #000000;
-
     background-color: #eeeeee;
-
 }
 
 .pagination-item a:hover,
@@ -559,63 +712,10 @@ fieldset {
     border: 1px solid #dbdbdb;
 }
 
-.page-title {
-    margin: 0;
-    font-size: 55px;
-    font-weight: 500;
-    line-height: 55px;
-    color: #000000;
-}
-
-/*  ---- Сеточный стили ----- */
-
-
-
-
-
-
-
-
-
-
-
-
-
-.main-footer {
-    display: flex;
-    flex-direction: row;
-    margin-top: 70px;
-    justify-content: flex-start;
-}
-
-
-.footer-social ul {
-    display: flex;
-    flex-direction: row;
-    width: 260px;
-    margin-right: 140px;
-}
-
-.footer-text {
-    width: 560px;
-}
 
 /* Сетка страницы каталога */
 
-.inner-page .main-navigation {
-    margin-bottom: 70px;
-}
 
-.page-title {
-    margin: 0;
-    margin-bottom: 110px;
-    padding: 0;
-}
-
-.filters {
-    width: 260px;
-    margin-right: 140px;
-}
 
 .catalog {
     width: 760px;

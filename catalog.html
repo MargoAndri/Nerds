@@ -23,12 +23,12 @@
     </nav>
 </header>
     <main class="container">
-        <h1 class="page-title">Магазин готовых шаблонов</h1>
+        <h1 class="catalog-title">Магазин готовых шаблонов</h1>
         <div class="catalog-columns">
-        <section class="filters">
+        <section class="filter">
             <h2 class="visually-hidden">Фильтр шаблонов</h2>
-            <form class="filter" method="get" action="#">
-                <fieldset>
+            <form class="filter-form" method="get" action="#">
+                <fieldset class="filter-item">
                     <legend>Стоимость:</legend>
                     <label for="price-range"></label>
                     <input id="price-range" type="range" min="0" max="15000" step="500">
@@ -145,21 +145,26 @@
         </section>
         </div>
         <section class="contacts">
+            <img src="img/contacts_background.png" width="1440" height="416">
             <h2 class="visually-hidden">Контакты дизайн-студии</h2>
-            <h3>Nerds design studio</h3>
-            <p>191186, Санкт-Петербург,<br>
-                ул. Б.Конюшенная, д. 19/8
-            </p>
-            <p>тел. +7 (812) 275-75-75</p>
-            <a class="button" href="#">Напишите нам</a>
+            <div class="contacts-details">
+                <h3>Nerds design studio</h3>
+                <p>191186, Санкт-Петербург,<br>
+                    ул. Б.Конюшенная, д. 19/8</p>
+                <p>тел. +7 (812) 275-75-75</p>
+                <a class="button" href="#">Напишите нам</a>
+            </div>
+            <div class="pin">
+                <img src="img/map-marker.png">
+            </div>
         </section>
     </main>
     <footer class="main-footer">
         <div class="footer-social">
             <ul>
-                <li><a class="social-button" href="#">Вконтакте</a></li>
-                <li><a class="social-button" href="#">Фейсбук</a></li>
-                <li><a class="social-button" href="#">Инстаграм</a></li>
+                <li class="social-button"><a class="social-vk" href="#"><span class="visually-hidden">ВКонтакте</span></a></li>
+                <li class="social-button"><a class="social-fb" href="#"><span class="visually-hidden">Фейсбук</span></a></li>
+                <li class="social-button"><a class="social-inst" href="#"><span class="visually-hidden">Инстаграм</span></a></li>
             </ul>
         </div>
         <div class="footer-text">
@@ -173,7 +178,7 @@
         <form class="write-us" method="post" action="#">
             <p class="write-us-item">
                 <label for="write-us-name">Ваше имя:</label>
-                <input id="write-us-name" type="text name="name" value="" placeholder="Представьтесь, пожалуйста:">
+                <input id="write-us-name" type="text" name="name" value="" placeholder="Представьтесь, пожалуйста:">
             </p>
             <p class="write-us-item">
                 <label for="write-us-email">Ваш e-mail:</label>
