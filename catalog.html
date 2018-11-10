@@ -28,16 +28,18 @@
         <section class="filter">
             <h2 class="visually-hidden">Фильтр шаблонов</h2>
             <form class="filter-form" method="get" action="#">
-                <fieldset class="filter-item">
+                <fieldset class="filter-item price-filter">
                     <legend>Стоимость:</legend>
-                    <label for="price-range"></label>
-                    <input id="price-range" type="range" min="0" max="15000" step="500">
-                    <label for="price-from">от</label>
-                    <input id="price-from" type="number" placeholder="0">
-                    <label for="price-to">до</label>
-                    <input id="price-to" type="number" placeholder="15000">
+                    <div class="range-controls">
+                        <label for="price-range"></label>
+                        <input id="price-range" type="range" min="0" max="15000" step="500">
+                    </div>
+                    <div class="price-controls">
+                        <label for="price-from">от<input id="price-from" type="number" placeholder="0"></label>
+                        <label for="price-to">до<input id="price-to" type="number" placeholder="15000"></label>
+                    </div>
                 </fieldset>
-                <fieldset>
+                <fieldset class="filter-item">
                 <legend>Сетка:</legend>
                 <ul>
                     <li class="filters-option">
@@ -54,7 +56,7 @@
                     </li>
                 </ul>
                 </fieldset>
-                <fieldset>
+                <fieldset class="filter-item">
                 <legend>Особенности:</legend>
                 <ul>
                     <li class="filters-option">
